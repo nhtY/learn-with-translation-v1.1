@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learn_with_translation/screens/sets/set_list_page.dart';
-import 'package:learn_with_translation/screens/study/study_page.dart';
-import 'package:learn_with_translation/screens/home/user_home_page.dart';
+import 'extensions/string_extensions.dart'; // package:learn_with_translation/
+import 'screens/sets/set_list_page.dart';
+import 'screens/study/study_page.dart';
+import 'screens/home/user_home_page.dart';
 
 import 'constants.dart';
-import "extentions/StringExtentions.dart";
+//import "extentions/string_extensions.dart";
 
 void main() {
   runApp(const MyApp());

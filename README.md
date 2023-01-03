@@ -2,15 +2,16 @@
 
 A new version of learn with translation app.
 
-## Getting Started
+## Current App View
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![ss1](https://user-images.githubusercontent.com/89942570/210337583-44b1d9b4-e2f4-4308-a322-6f1944a60391.png)
+---
+![ss2](https://user-images.githubusercontent.com/89942570/210337586-17c7f0b9-e2d6-40aa-911b-16eb34f0f210.png)
+---
+![ss3](https://user-images.githubusercontent.com/89942570/210337589-db217ebc-88a2-432b-8d99-d4eade76a5c6.png)
+---
+![ss4](https://user-images.githubusercontent.com/89942570/210337591-9ae609b6-27bd-46ff-a23e-68496da0d0b3.png)
+---
+![ss5](https://user-images.githubusercontent.com/89942570/210337575-dc0d92ab-0f1f-4da3-9fa2-d91f03091433.png)
+---
+![ss6](https://user-images.githubusercontent.com/89942570/210337581-be7a3981-dd88-4f17-880b-6fef3476a2ce.png)
