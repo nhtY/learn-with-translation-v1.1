@@ -4,7 +4,7 @@ A new version of learn with translation app.
 
 ## Current App View
 
-![ss1](https://user-images.githubusercontent.com/89942570/210337583-44b1d9b4-e2f4-4308-a322-6f1944a60391.png)
+![ss1](https://user-images.githubusercontent.com/89942570/210337583-44b1d9b4-e2f4-4308-a322-6f1944a60391.png = 250x500)
 ---
 ![ss2](https://user-images.githubusercontent.com/89942570/210337586-17c7f0b9-e2d6-40aa-911b-16eb34f0f210.png)
 ---
