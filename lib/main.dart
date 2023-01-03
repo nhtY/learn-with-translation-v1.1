@@ -94,7 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
     final bottomNavBar =  ClipPath(
       clipper: NavBarClipper(),
       child: Container(
-        color: Colors.red,
         child: BottomNavigationBar(
             items: _kBottomNavBarItems,
             currentIndex: _currentTabIndex,
