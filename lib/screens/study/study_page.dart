@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:learn_with_translation/model/word.dart';
 import 'package:learn_with_translation/model/word_set.dart';
 
+import 'components/last_studied.dart';
+import 'components/number_of_words.dart';
+import 'components/success_widget.dart';
+
 class StudyPage extends StatefulWidget {
   const StudyPage({Key? key}) : super(key: key);
   final String title = "Study";
@@ -100,13 +104,13 @@ class _StudyPageState extends State<StudyPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        successWidget(wordSet.successRate),
-                        dateInfo(wordSet)
+                        SuccessWidget(successRate: wordSet.successRate,),
+                        LastStudied(wordSet: wordSet)
                       ],
                     )
                   ],
                 )),
-                numberOfWordsWidget(wordSet),
+                NumberOfWords(wordSet: wordSet),
               ],
             ),
           ),
@@ -155,56 +159,10 @@ class _StudyPageState extends State<StudyPage> {
     );
   }
 
-  Widget dateInfo(WordSet wordSet) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 8, 0),
-          child: Text("Studied:",
-              style: TextStyle(
-                  color:
-                  Theme.of(context).colorScheme.onSecondary,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w100)),
-        ),
-        Text(
-            "${wordSet.lastStudied.day}/${wordSet.lastStudied.month}/"
-                "${wordSet.lastStudied.year}",
-            style: TextStyle(
-                color: Theme.of(context).colorScheme.onSecondary,
-                fontStyle: FontStyle.italic,
-                fontSize: 14,
-                fontWeight: FontWeight.w100))
-      ],
-    );
-  }
 
-  Widget numberOfWordsWidget(WordSet wordSet) {
-    return Container(
-      margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
-          borderRadius: BorderRadius.circular(16)),
-      child: Column(
-        children: [
-          Text(
-            "${wordSet.numberOfWords}",
-            style: TextStyle(
-                color: Theme.of(context).colorScheme.onSecondary,
-                fontWeight: FontWeight.w600,
-                fontSize: 20),
-          ),
-          Text("Words",
-              style: TextStyle(
-                  color: Theme.of(context).colorScheme.onSecondary))
-        ],
-      ),
-    );
-  }
 }
+
+
 
 class SuccessRateClipper extends CustomClipper<Path> {
   @override
