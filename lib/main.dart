@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'extensions/string_extensions.dart'; // package:learn_with_translation/
-import 'screens/sets/set_list_page.dart';
-import 'screens/study/study_page.dart';
+import 'package:learn_with_translation/screens/create_set/create_set_page.dart';
+import 'package:learn_with_translation/screens/sets/sets_page.dart';
+import 'extensions/string_extensions.dart';
 import 'screens/home/user_home_page.dart';
 
 import 'constants.dart';
-//import "extentions/string_extensions.dart";
 
 void main() {
   runApp(const MyApp());
@@ -71,18 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
   /// The order of the pages should be in line with the nav bars
   final _kTabPages = <Widget>[
     const HomePage(),
-    const StudyPage(),
-    const SetListPage()
+    const SetsPage(),
+    const CreateSetPage()
   ];
 
   /// The navigation bar items which are clickable. When click on it, related page will be shown.
   final _kBottomNavBarItems = <BottomNavigationBarItem>[
     const BottomNavigationBarItem(
-        icon: Icon(Icons.home_filled), label: 'home'),
+        icon: Icon(Icons.home_filled), label: 'Home'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.quiz_outlined), label: 'study'),
+        icon: Icon(Icons.quiz_outlined), label: 'Sets'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.featured_play_list), label: 'sets'),
+        icon: Icon(Icons.featured_play_list), label: 'Create Set'),
 
   ];
 
@@ -102,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Set the current index to the clicked tab's index..
             onTap: (int index) {
               setState(() {
+
                 _currentTabIndex = index;
                 // set the appbar title according to current screen
                 _appBarTitle = _kBottomNavBarItems[index].label!;
@@ -115,22 +115,34 @@ class _MyHomePageState extends State<MyHomePage> {
       )
     );
 
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text(_appBarTitle))
-        ),
-        backgroundColor: Theme.of(context).colorScheme.background,
-        body: _kTabPages[_currentTabIndex], // show the clicked page
-        bottomNavigationBar: bottomNavBar,
-        extendBody: true, // available area == screeen OR (screen - bottomNavBar's height). If extended, we can use till very bottom.
-        floatingActionButton: _currentTabIndex != 2 ? Container() :
-        FloatingActionButton(
-          onPressed: (){
-            print("create a new set");
-          },
-          child: const Icon(
-              Icons.add
+    return GestureDetector(
+      onTap: () {
+        //FocusScopeNode currentFocus = FocusScope.of(context);
+        FocusManager.instance.primaryFocus?.unfocus();
+        // if (!currentFocus.hasPrimaryFocus) {
+        //   setState(() {
+        //     currentFocus.unfocus();
+        //   });
+        // }
+      },
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Center(child: Text(_appBarTitle))
+          ),
+          backgroundColor: Theme.of(context).colorScheme.background,
+          body: _kTabPages[_currentTabIndex], // show the clicked page
+          bottomNavigationBar: bottomNavBar,
+          extendBody: true, // available area == screeen OR (screen - bottomNavBar's height). If extended, we can use till very bottom.
+          floatingActionButton: _currentTabIndex != 2 ? Container() :
+          FloatingActionButton(
+            onPressed: (){
+              print("create a new word");
+            },
+            child: const Icon(
+                Icons.add
+            ),
+            tooltip: "add new word",
           ),
         ),
       ),
